@@ -12,7 +12,7 @@ var express = require("express"),
 var server;
 var measures = {};
 var socket;
-var sio = require('socket.io');
+// var sio = require('socket.io');
 var io;
 var setting;
 
@@ -28,25 +28,25 @@ app.get('/heartbeat',  function(req, res) {
 app.use(notFound.index);
 
 server = http.createServer(app);
-io = sio.listen(server);
+// io = sio.listen(server);
 
 require('./routes/assetsRoutes').init(app);
 require('./routes/widgetsRoutes').init(app);
-require('./routes/testMessages').init(app, io);
+// require('./routes/testMessages').init(app, io);
 
 //Initialise Measures Factory
 MeasureFactory.init();
 
 //Create Receiving UDP Socket
-socket = dgram.createSocket('udp4', onMessage);
-socket.bind(49100);
+// socket = dgram.createSocket('udp4', onMessage);
+// socket.bind(49100);
 
-for (setting in app.settings.socketIO) {
-	if (app.settings.socketIO.hasOwnProperty(setting)) {
-		io.set(setting, app.settings.socketIO[setting]);
-	}
-}
-io.on('connection', onSIOConnect);
+// for (setting in app.settings.socketIO) {
+// 	if (app.settings.socketIO.hasOwnProperty(setting)) {
+// 		io.set(setting, app.settings.socketIO[setting]);
+// 	}
+// }
+// io.on('connection', onSIOConnect);
 
 if (!module.parent) {
     var port = process.env.PORT || 3000;
@@ -61,6 +61,6 @@ function onSIOConnect (socket) {
 	//handle client messages (if any)
 }
 
-function onMessage ( message ) {
-	io.sockets.emit("data:measures", {data:MeasureFactory.decodeMessage(message)});
-}
+// function onMessage ( message ) {
+// 	io.sockets.emit("data:measures", {data:MeasureFactory.decodeMessage(message)});
+// }
