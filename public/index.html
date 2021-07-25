@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Gauges App.</title>
+        <meta charset="utf8">
+
+        <link href="./stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="./stylesheets/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+        <link href="./stylesheets/home.css" rel="stylesheet" type="text/css">
+
+        <script src="./javascripts/lib/modernizr.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="#">X-Plane Cockpit Gauges</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <header id='header'>
+                <div id="header_contents">
+                  <hr class="hide" />
+                </div>
+            </header>
+
+            <div id="widgets"></div>
+
+            <footer>
+                <p>&copy; davide.molin 2015. No commercial use permitted</p>
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+                <script src="http://code.createjs.com/easeljs-0.5.0.min.js"></script>
+                <script src="/javascripts/lib/tash-0.0.1-min.js"></script>
+                <script src="/services/common/events.js"></script>
+                <script src="/services/common/widgets.js"></script>
+
+                <script src="/widgets/altitude.js"></script>
+                <script src="/widgets/verticalspeed.js"></script>
+                <script src="/widgets/turnslip.js"></script>
+
+                <script src="/widgets/attitude.js"></script>
+                <script src="/widgets/dg.js"></script>
+                <script src="/widgets/speed.js"></script>
+                <script src="/javascripts/application.js"></script>
+            </footer>
+        </div>
+    </body>
+</html>
